@@ -20,7 +20,8 @@ request = requests.get(url=URL)
 content = request.json()
 
 message = ""
-for article in content["articles"][:20]:
+number_articles = 20
+for article in content["articles"][:number_articles]:
     message = f"{message}\n{article['title']}\n{article['description']}\n{article['url']}\n"
 
 message = unidecode.unidecode(message)
